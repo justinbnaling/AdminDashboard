@@ -1,0 +1,297 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "side header"
+    "side main";
+}
+
+.side {
+    grid-area: side;
+    background-color: #0ea5e9;
+    padding: 15px;
+    color: white;
+}
+
+.header {
+    grid-area: header;
+    border-bottom: 1px black solid;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.searchWrapper,
+.profileWrapper {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.profile {
+    height: 75px;
+    width: 75px; 
+    border-radius: 50px;
+}
+
+.profile.small{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+
+.searchRight,
+.userActions,
+.greetings {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+}
+.greetings{
+    align-items: center;
+}
+
+.greetings .name {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.userActions button {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    width: 6rem;
+    justify-content: center;
+    border-radius: 15px; 
+    border-style: none;
+    background-color: #0ea5e9;
+    color: white;
+}
+
+.searchBar {
+    display: flex;
+    width: 60%;
+}
+
+.searchBar input {
+    background-color: lightgray;
+    border-radius: 15px;
+    border: none;
+    width: 90%;
+    padding-left: .5rem;
+}
+
+.searchRight div {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.dashboard {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.dashboard,
+.nav1 {
+    padding-top: 15px;
+    margin-bottom: 75px;
+}
+
+.nav1,
+.nav2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.side button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;    
+    color: white;
+    background-color: #0ea5e9;
+    border-style: none;
+}
+
+.main {
+    grid-area: main;
+    padding: 15px;
+    padding-top: 30px;
+    background-color: lightgray;
+    gap: 20px; 
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "projects announcements"
+    "projects trending"
+}
+
+.wrapperProjects,
+.wrapperAnnouncements,
+.wrapperTrending {
+    display: flex; 
+    gap: 10px; 
+    flex-direction: column;
+    grid-area: projects;
+}
+
+.wrapperProjects {
+    grid-area: projects;
+}
+
+.wrapperAnnouncements {
+    grid-area: announcements;
+    
+}
+
+.wrapperTrending {
+    grid-area: trending;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    
+}
+
+.projects .card {
+    border: none;
+    border-left: 10px orange solid;
+    border-radius: 10px;
+    box-shadow: 5px 10px #888888;
+    height: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.announcements {
+    display: grid; 
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.announcements .card {
+    border-bottom: 1px black solid;
+    padding: 10px;
+}
+
+.announcements .card:last-child {
+    border: none;
+}
+
+
+.trending {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 20px 10px 20px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.trending .card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+h2 {
+    font-size: larger;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: large;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    /* background-color: #1e40af; */
+    background: orange;
+}
